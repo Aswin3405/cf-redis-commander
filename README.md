@@ -12,21 +12,30 @@ Deployment to Cloud Foundry
 -------------
 1) git clone this repository,
 ```
-git clone https://github.com/jimbasler-pivotal/cf-redis-commander
+git clone https://github.com/Aswin3405/cf-redis-commander
 cd cf-redis-commander
 ```
-Remember to install [cf cli](https://github.com/cloudfoundry/cli/releases) and then get an account from [Pivotal Web Services](http://run.pivotal.io/).
+    Remember to install [cf cli](https://github.com/cloudfoundry/cli/releases) and then get an account from [Predix.io](https://www.predix.io/).
 
-2) Push the application:
+2) Remember to change REDIS_TLS to true if the redis instance supports TLS in the manifest.yml
+
+3) Push the application:
 ```
 cf push --no-start
 ```
-3) Bind redis service to this app.
 
-4) Change the env variable SERVICE_NAME to the bound service instance name.
+4) Bind redis service to this app.
 
-5) You can access your app at 
+5) Change the env variable SERVICE_NAME to the bound service instance name.
+
+6) Start the app.
 ```
-http://<random route>.cfapps.io
+cf restart cf-redis-commander
 ```
-6) Login with 'admin' and 'pass' unless you changed it in index.js
+
+7) You can access your app at 
+```
+http://<random route>.run.aws-usw02-pr.ice.predix.io
+```
+
+8) Login with 'admin' and 'pass' unless you changed it in index.js

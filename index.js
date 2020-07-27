@@ -41,8 +41,9 @@ var credentials = getCredentials();
 
 var cmd = "./node_modules/.bin/redis-commander";
 cmd += " --redis-port " + credentials.port;
-cmd += " --redis-host " + credentials.hostname;
+cmd += " --redis-host " + credentials.host;
 cmd += " --redis-password " + credentials.password;
+cmd += " --redis-tls " + process.env.REDIS_TLS;
 cmd += " --http-auth-username " + "admin";
 cmd += " --http-auth-password " + "pass";
 cmd += " --port " + process.env.PORT;

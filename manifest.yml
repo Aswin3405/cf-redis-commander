@@ -1,6 +1,10 @@
 ---
 applications:
 - name: cf-redis-commander
-  memory: 512M
+  memory: 256M
   instances: 1
   random-route: true
+  stack: cflinuxfs2
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack#v1.6.56
+env:
+  REDIS_TLS: true

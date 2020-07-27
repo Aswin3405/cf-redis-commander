@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "cfenv": "^1.0.0",
-    "redis-commander": "^0.3.2"
+    "redis-commander": "^0.6.3"
   }
 }
